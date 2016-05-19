@@ -14,6 +14,12 @@ end
 When /^I follow "find Movie with same Director"/$ do
 end
 
-Then /^I should be on the similar Movies page for
+Then /^I should be on the similar Movies page for "(.*?)"$/ do |film|
+    current_path = URI.parse(current_url)
+    if current_path.respond_to? :should
+        assert.page.current_path == similar_movie_path(1)
+    end
+end
+
 
     
