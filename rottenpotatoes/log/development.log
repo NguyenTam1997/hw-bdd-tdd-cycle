@@ -898,3 +898,10 @@ Started GET "/assets/rails.png" for 117.5.84.139 at 2016-05-19 16:45:53 +0000
 
 
 Started GET "/assets/rails.png" for 117.5.84.139 at 2016-05-19 17:13:02 +0000
+
+
+Started GET "/assets/rails.png" for 117.5.84.139 at 2016-05-19 17:24:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddMoreMovies (20160516104742)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddMoreMovies (20160516104742)

@@ -1,20 +1,17 @@
-%h1= "Other Movies Director By:" {@director}"
+-# in app/views/movies/similar.html.haml
 
-%table#movies
-    %thead
-        %tr
-    %th {:class => @title_header}= link_to "Movie Title", movie_path(:sort => 'title', :ratings => @selected_ratings), id => 'title_header'
-    %th ratings
-    %th {:class => @date_header}= link_to "Release Date", movie_path(:sort => 'release_date', :ratings => @selected_ratings), id => 'release_date_header'
-    %th More Info
-    
-    %tbody
-        -@movies.each do |movie|
-    %tr
-        %td= movie.title
-        %td= movie.rating
-        %td= movie.release_date
-    %td= link_to"Movie About #{movie.title}", movie_path(movie)
-    
-    = link_to"Add new movie", new_movie_path
-    
+%h2 Movies similar to #{@movie.title}
+
+%p#description= @movie.description
+
+%h3 Movies by same director:
+- if @sameDirectorMovies
+  %ul
+    - @sameDirectorMovies.each do |movie|
+      %li
+        %td= link_to "#{movie.title}", movie_path(movie)
+
+%div
+  = link_to 'Back to movie list', movies_path
+%div
+  = link_to "Back to movie", movie_path(@movie)
